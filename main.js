@@ -1034,6 +1034,11 @@ CakeIntro.init();
 Gift.init();
 Music.init();
 Stickers.init();
+// điện thoại dọc: chạm vào màn "xoay ngang" để xem luôn không cần xoay
+(() => {
+  const rn = $('.rotate-note');
+  if (rn) rn.addEventListener('click', () => document.body.classList.add('peek'));
+})();
 // chế độ KIỂM TRA: thêm ?debug vào URL → hiện nút skip trò (Maru không thấy)
 if (location.search.includes('debug')) {
   const b = document.createElement('button');
