@@ -154,7 +154,7 @@ const Poke = {
     try {
       this.crunchAudio = this.crunchAudio || new Audio('audio/cap-cap.m4a');
       const a = this.crunchAudio.cloneNode();
-      a.volume = 0.85;
+      a.volume = 0.4;
       const pr = a.play();
       if (pr) { pr.catch(() => this.crunchSynth()); return; }
       return;
@@ -179,7 +179,7 @@ const Poke = {
         bp.frequency.value = 1500 + k * 400;
         bp.Q.value = 0.7;
         const g = ac.createGain();
-        g.gain.value = 0.55;
+        g.gain.value = 0.3;
         src.connect(bp); bp.connect(g); g.connect(ac.destination);
         src.start(t);
       }
