@@ -95,15 +95,9 @@ body::before {
   0%, 100% { transform: rotate(0); }
   50%      { transform: rotate(-90deg); }
 }
-.rotate-note { cursor: pointer; }
-.rotate-tap { font-size: 14px; font-weight: 700; opacity: .85; text-decoration: underline;
-  text-underline-offset: 3px; margin-top: 4px; }
 @media (orientation: portrait) and (max-width: 700px) {
   .rotate-note { display: flex; }
   .tablet { display: none; }
-  /* Maru chạm "xem luôn" → ẩn nhắc, hiện khung co vừa bề ngang máy dọc */
-  body.peek .rotate-note { display: none; }
-  body.peek .tablet { display: block; }
 }
 
 /* ============ SÂN KHẤU & STICKER QUANH MÉP NGOÀI ============ */
@@ -130,9 +124,9 @@ body::before {
 /* ============ KHUNG MÁY TÍNH BẢNG NGANG ============ */
 .tablet {
   position: relative;
-  width: min(1320px, 98vw, calc(97dvh * 16 / 10)); /* co vừa cả bề ngang lẫn cao → lấp đầy màn */
+  width: min(1320px, 98vw);
   aspect-ratio: 16 / 10;
-  max-height: 97dvh;
+  max-height: 96dvh;
   background:
     radial-gradient(circle at 12% 8%, rgba(255,255,255,.9), transparent 26%),
     repeating-linear-gradient(52deg, transparent 0 90px, rgba(160,150,130,.05) 90px 92px),
