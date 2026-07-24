@@ -1,0 +1,117 @@
+ADD THIS TO THE CLAUDE WEBSITE PROMPT
+
+Use the uploaded transparent PNG fairy images as a decorative interactive sticker set for the birthday website.
+
+Sticker asset names:
+- /assets/stickers/maru_fairy_sticker_01.png
+- /assets/stickers/maru_fairy_sticker_02.png
+- /assets/stickers/maru_fairy_sticker_03.png
+- /assets/stickers/maru_fairy_sticker_04.png
+- /assets/stickers/maru_fairy_sticker_05.png
+- /assets/stickers/maru_fairy_sticker_06.png
+- /assets/stickers/maru_fairy_sticker_07.png
+
+PURPOSE:
+These fairy stickers are not static background decorations. They must behave like layered interactive scrapbook stickers inside the magical birthday website for Maru.
+
+VISUAL ROLE:
+- Use them as decorative animated fairy companions across the birthday journey.
+- They should appear as movable 2.5D sticker layers placed around the parchment edges or near scene transitions.
+- They must support the mixed media magical collage style.
+- They should feel like glowing magical paper stickers layered above the parchment, not flat pasted screenshots.
+- Preserve the transparent background.
+- Add soft drop shadow, subtle outer glow, and a small paper-cut sticker rim when appropriate.
+- Do not overuse them; each scene should use only one fairy sticker at a time unless a specific scene needs a small sequence.
+
+INTERACTION RULES:
+- Each sticker must be draggable on desktop.
+- On mobile, stickers should be gently touch-draggable or tap-reactive.
+- Add hover reactions on desktop:
+  - slight lift
+  - tiny rotation
+  - wing sparkle increase
+  - soft glow pulse
+  - cursor becomes a small magical spark
+- Add click/tap reactions:
+  - small gold/cyan particle burst
+  - soft bell/chime sound if audio is enabled
+  - optional short birthday micro-message appears near the sticker
+- Add scroll-based parallax:
+  - foreground stickers move slightly faster than parchment
+  - do not let stickers cover main text
+- Add idle animation:
+  - slow floating motion
+  - subtle breathing glow
+  - tiny wing shimmer
+  - very slow rotation within 1–3 degrees
+- Respect prefers-reduced-motion:
+  - disable draggable inertia
+  - disable large particle burst
+  - keep only a simple opacity/scale feedback
+
+SCENE PLACEMENT SUGGESTIONS:
+- Scene 0 Loading:
+  Use one tiny fairy silhouette or sticker glow as a preloader companion.
+- Scene 1 Parchment Reveal:
+  Place sticker_01 near the left edge, floating beside the opening scrapbook.
+- Scene 2 Invitation:
+  Use sticker_02 as if the fairy is reading or delivering the letter.
+- Scene 3 Name Reveal:
+  Use sticker_06 or sticker_07 as a small celebrating fairy near the name reveal.
+- Scene 4 Memory Album:
+  Use sticker_03 or sticker_04 as a quiet reading fairy near the album photos.
+- Scene 5 Wish Objects:
+  Use sticker_05 with the heart effects as a wish/emotion accent.
+- Scene 6 Birthday Cake:
+  Use sticker_07 with a small magical sparkle reaction after the candles are blown out.
+- Scene 7 Personal Message:
+  Use sticker_04 or sticker_03 in a calm, low-motion position.
+- Scene 8 Final:
+  Use sticker_05 or sticker_07 briefly with floating hearts or light particles, then fade into the final lantern scene.
+
+IMPLEMENTATION REQUIREMENTS:
+Create a reusable component named InteractiveFairySticker.
+
+Component props:
+- src
+- alt
+- initialX
+- initialY
+- scale
+- rotation
+- depth
+- sceneId
+- draggable
+- parallaxStrength
+- glowIntensity
+- idleMotion
+- message
+- zIndex
+
+Example behavior:
+- Use Framer Motion for drag, hover, tap, and idle floating.
+- Use GSAP ScrollTrigger for scroll-based parallax.
+- Use CSS filter drop-shadow for the glowing sticker look.
+- Use pointer-events only on visible sticker regions as much as practical.
+- Keep the component accessible with aria-label and keyboard focus.
+- Add keyboard interaction: Enter or Space triggers the same effect as click.
+
+Do not:
+- treat the stickers as one static background image
+- stretch or distort the fairy stickers
+- cover important text with stickers
+- animate all stickers at once
+- make them bounce aggressively
+- make them feel like cheap emoji stickers
+- use them in a way that breaks the antique magical scrapbook style
+
+Suggested micro-messages:
+- “Maru, this little fairy has been guarding your memories.”
+- “A tiny wish has been saved for you.”
+- “The stars seem brighter around you.”
+- “One more page, one more memory.”
+- “This moment belongs to you.”
+
+Add these stickers to:
+public/assets/stickers/
+and reference them from the central birthday.config.ts file.

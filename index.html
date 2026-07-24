@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Maru's Birthday 💙</title>
+<link rel="stylesheet" href="style.css?v=beat">
+</head>
+<body>
+
+<!-- Nhắc xoay ngang khi cầm máy dọc -->
+<div class="rotate-note">
+  <div class="rotate-icon">📱↻</div>
+  <p>rotate your phone sideways<br>for the full experience 💙</p>
+</div>
+
+<!-- Sân khấu: khung iPad + sticker đính quanh mép ngoài -->
+<div class="stage">
+<div class="frame-stickers" id="frame-stickers"></div>
+<main class="tablet" id="tablet">
+
+  <!-- ============ TRANG 1: MẬT KHẨU ============ -->
+  <section class="slide slide-lock is-on" id="slide-lock">
+    <div class="lock-left">
+      <div class="scallop-frame pop pop-top" style="--d:.1s">
+        <figure class="capoo-slot lock-capoo" data-capoo="lock"></figure>
+      </div>
+      <p class="lock-caption pop pop-bottom" style="--d:.35s" id="lock-caption"></p>
+      <span class="doodle d-star s1">✦</span>
+      <span class="doodle d-star s2">⭑</span>
+      <span class="doodle d-heart s3">💙</span>
+      <span class="doodle d-star s4">✦</span>
+    </div>
+    <div class="lock-right">
+      <p class="pad-label pop pop-right" style="--d:.15s">Enter a passcode</p>
+      <div class="pad-dots pop pop-right" style="--d:.25s" id="pad-dots">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="pad-keys pop pop-right" style="--d:.35s" id="pad-keys"></div>
+      <button class="btn-unlock pop pop-bottom" style="--d:.5s" id="btn-unlock">UNLOCK</button>
+      <p class="pad-hint" id="pad-hint"></p>
+      <p class="pad-wrong" id="pad-wrong"></p>
+    </div>
+  </section>
+
+  <!-- ============ TRANG 2: YES / NO ============ -->
+  <section class="slide slide-surprise" id="slide-surprise">
+    <h1 class="cutout pop pop-top" style="--d:.1s" id="surprise-line1"></h1>
+    <figure class="capoo-slot surprise-capoo pop pop-left" style="--d:.3s" data-capoo="surprise"></figure>
+    <p class="hand-line pop pop-bottom" style="--d:.45s" id="surprise-line2"></p>
+    <div class="yesno pop pop-bottom" style="--d:.6s">
+      <button class="btn-yes" id="btn-yes"></button>
+      <button class="btn-no" id="btn-no"></button>
+    </div>
+    <p class="no-msg" id="no-msg"></p>
+    <span class="doodle d-star s1">✦</span>
+    <span class="doodle d-star s2">⭑</span>
+    <span class="doodle d-heart s4">💛</span>
+  </section>
+
+  <!-- ============ TRANG 3: HAPPY BIRTHDAY ============ -->
+  <section class="slide slide-happy" id="slide-happy">
+    <p class="jp-note pop pop-top" style="--d:.1s" id="happy-jp"></p>
+    <h1 class="cutout cutout-big" id="happy-title"></h1>
+    <h2 class="cutout cutout-name" id="happy-name"></h2>
+    <p class="hand-line pop pop-bottom" style="--d:.8s" id="happy-sub"></p>
+    <figure class="capoo-slot happy-capoo pop pop-right" style="--d:.55s" data-capoo="happy"></figure>
+    <span class="doodle d-star s1">⭑</span>
+    <span class="doodle d-heart s2">💙</span>
+    <span class="doodle d-star s3">✦</span>
+    <span class="doodle d-heart s4">🩵</span>
+  </section>
+
+  <!-- ============ THỬ THÁCH 1: BẮT CAPOO ============ -->
+  <section class="slide slide-catch" id="slide-catch">
+    <h1 class="cutout pop pop-top" style="--d:.1s" id="catch-title"></h1>
+    <p class="hand-line pop pop-top" style="--d:.3s" id="catch-hint"></p>
+    <div class="catch-arena" id="catch-arena">
+      <img class="catch-capoo" id="catch-capoo" src="capoo/stickers/st-face.png" alt="Capoo">
+    </div>
+    <p class="catch-count" id="catch-count"></p>
+  </section>
+
+  <!-- ============ TRANG 4: MEMORIES (kiểu trang tìm kiếm) ============ -->
+  <section class="slide slide-memories" id="slide-memories">
+    <h1 class="search-logo pop pop-top" style="--d:.1s" id="mem-logo"></h1>
+    <div class="search-bar pop pop-top" style="--d:.3s">
+      <span class="sb-icon">🔍</span>
+      <span id="mem-query"></span>
+      <span class="sb-mic">🎤</span>
+    </div>
+    <div class="photo-grid" id="photo-grid"></div>
+    <figure class="capoo-slot mem-capoo pop pop-right" style="--d:.5s" data-capoo="memories"></figure>
+  </section>
+
+  <!-- ============ TRANG 5: FUN FACTS ============ -->
+  <section class="slide slide-facts" id="slide-facts">
+    <h1 class="cutout pop pop-top" style="--d:.1s" id="facts-title"></h1>
+    <div class="fact-list" id="fact-list"></div>
+    <span class="doodle d-star s1">✦</span>
+    <span class="doodle d-star s4">⭑</span>
+  </section>
+
+  <!-- ============ TRANG 6: LỜI CHÚC ============ -->
+  <section class="slide slide-wishes" id="slide-wishes">
+    <p class="jp-note pop pop-top" style="--d:.05s" id="wishes-jp"></p>
+    <h1 class="cutout" id="wishes-title"></h1>
+    <div class="wish-board" id="wish-board"></div>
+    <figure class="capoo-slot wishes-capoo pop pop-left" style="--d:.5s" data-capoo="wishes"></figure>
+  </section>
+
+  <!-- ============ THỬ THÁCH 2: CÂU ĐỐ NHỎ ============ -->
+  <section class="slide slide-quiz" id="slide-quiz">
+    <h1 class="cutout pop pop-top" style="--d:.1s" id="quiz-title"></h1>
+    <figure class="capoo-slot quiz-capoo pop pop-left" style="--d:.3s" data-capoo="shy"></figure>
+    <p class="hand-line pop pop-bottom" style="--d:.4s" id="quiz-question"></p>
+    <div class="quiz-options pop pop-bottom" style="--d:.55s" id="quiz-options"></div>
+    <p class="quiz-wrong" id="quiz-wrong"></p>
+  </section>
+
+  <!-- ============ TRANG 7: LÁ THƯ ============ -->
+  <section class="slide slide-letter" id="slide-letter">
+    <h1 class="cutout" id="letter-title"></h1>
+    <div class="letter-wrap">
+      <figure class="capoo-slot letter-capoo pop pop-left" style="--d:.35s" data-capoo="letter"></figure>
+      <article class="letter-paper pop pop-bottom" style="--d:.25s">
+        <p class="letter-jp" id="letter-jp"></p>
+        <div class="letter-text" id="letter-text"></div>
+        <p class="letter-sign" id="letter-sign"></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ TRANG 8: THỔI NẾN ============ -->
+  <section class="slide slide-cake" id="slide-cake">
+    <!-- intro: Capoo đầu bếp nấu ramen (video, có nút bỏ qua) -->
+    <div class="cake-intro" id="cake-intro" hidden>
+      <video id="intro-video" src="capoo/ramen-intro.mp4" muted playsinline preload="auto"></video>
+      <button class="btn-cute ghost intro-skip" id="intro-skip"></button>
+    </div>
+
+    <p class="cake-prompt pop pop-top" style="--d:.1s" id="cake-prompt"></p>
+    <div class="cake pop pop-bottom" style="--d:.25s" id="cake">
+      <div class="cake-candles" id="cake-candles"></div>
+      <div class="ramen-steam"><span>♨</span><span>♨</span></div>
+      <img class="ramen-photo" id="ramen-photo" src="capoo/ramen-photo.webp" alt="Birthday ramen">
+      <div class="cake-crumbs" id="cake-crumbs" hidden>🥢✨</div>
+    </div>
+    <img class="cake-eater" id="cake-eater" src="capoo/stickers/st-face.png" alt="Capoo" hidden>
+    <!-- màn chúc mừng khi vừa thổi tắt nến: ảnh cmsn + Bugcat King cổ vũ (nhạc Happy Birthday chạy) -->
+    <div class="cake-celebrate-scene" id="cake-celebrate-scene" hidden>
+      <img class="ccs-photo" id="ccs-photo" alt="Happy birthday Maru" style="display:none" onerror="this.style.display='none'">
+      <div class="ccs-capoos">
+        <img class="ccs-king" id="ccs-king" alt="Capoo king" style="display:none" onerror="this.style.display='none'">
+        <img class="ccs-cheer" id="ccs-cheer" alt="Capoo cheering" style="display:none" onerror="this.style.display='none'">
+      </div>
+    </div>
+    <div class="ramen-layer" id="ramen-layer"></div>
+    <p class="ramen-count" id="ramen-count" hidden></p>
+    <div class="cake-actions pop pop-bottom" style="--d:.45s" id="cake-actions">
+      <button class="btn-cute" id="btn-mic">🌬 Blow with your breath</button>
+      <button class="btn-cute ghost" id="btn-tap-blow">✨ Tap to blow</button>
+    </div>
+    <p class="mic-status" id="mic-status"></p>
+    <div class="cake-done" id="cake-done" hidden>
+      <figure class="capoo-slot done-capoo" data-capoo="celebrate"></figure>
+      <h3 id="done-title"></h3>
+      <p id="done-line"></p>
+      <p class="jp-note" id="done-jp"></p>
+    </div>
+  </section>
+
+  <!-- ============ TRANG 9: QUÀ CUỐI ============ -->
+  <section class="slide slide-gift" id="slide-gift">
+    <h1 class="cutout" id="gift-heading"></h1>
+    <figure class="capoo-slot gift-capoo pop pop-left" style="--d:.3s" data-capoo="gift"></figure>
+    <h3 class="pop pop-bottom" style="--d:.4s" id="gift-title"></h3>
+    <p class="pop pop-bottom" style="--d:.5s" id="gift-desc"></p>
+    <a class="btn-cute pop pop-bottom" style="--d:.6s" id="gift-btn" download></a>
+    <p class="jp-note pop pop-bottom" style="--d:.75s" id="gift-jp"></p>
+  </section>
+
+  <!-- Điều hướng slide -->
+  <button class="nav-arrow nav-prev" id="nav-prev" hidden>‹</button>
+  <button class="nav-arrow nav-next" id="nav-next" hidden>›</button>
+  <div class="nav-dots" id="nav-dots" hidden></div>
+  <button class="music-fab" id="btn-music" hidden>🎵</button>
+
+</main>
+</div>
+
+<!-- Xem ảnh to -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" id="lb-close">✕</button>
+  <img id="lb-img" alt="">
+  <p class="lb-date" id="lb-date"></p>
+  <p class="lb-caption" id="lb-caption"></p>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<script src="config.js?v=beat"></script>
+<script src="main.js?v=beat"></script>
+</body>
+</html>
