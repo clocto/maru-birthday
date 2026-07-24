@@ -231,7 +231,7 @@ const CONFIG = {
   // ------ Nhạc nền (tuỳ chọn) ------
   // Bỏ file nhạc vào thư mục audio/ rồi điền tên vào đây. Để '' thì web im lặng.
   audio: {
-    ambience: 'audio/nhac-nen.m4a',
+    ambience: 'audio/theme-happy-birthday.mp3',
     birthdaySong: 'audio/happy-birthday-song.mp3', // bật 1 lần đúng lúc thổi tắt nến
   },
 
